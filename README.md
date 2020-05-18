@@ -1,2 +1,3 @@
-# cs50-project2
-Chat-room with Python/Flask
+# Project 2
+
+Web Programming with Python and JavaScript
