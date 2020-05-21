@@ -1,0 +1,68 @@
+{% extends "layout.html" %} 
+
+{% block load %}
+<script>
+  var miname = localStorage.getItem('nickname')
+  document.addEventListener('DOMContentLoaded', function() {
+    const nicknameuser = localStorage.getItem('nickname');
+    if(nicknameuser){
+      document.querySelector('#nick').innerHTML = nicknameuser;
+      $("#setNickname").hide();
+      $("#welcome").show();
+    }else{
+      $("#welcome").hide();
+      $("#setNickname").show();
+    }
+  });
+</script>
+{% endblock load %}
+
+{% block menu %}
+<div class="row align-items-center justify-content-center h-75">
+  <div class="container text-center">
+    <h1>Welcome to PySky</h1>
+    <p>
+      Hi, i'm a chatroom made using Python and JavaScript. With me, you can do
+      this:
+    </p>
+  </div>
+</div>
+{% endblock menu %} {% block chat %}
+<div class="row align-items-center justify-content-center h-75" id="setNickname">
+  <div class="card bg-light">
+    <div class="card-body w-100">
+      <h4 class="card-title">What is your nickname?</h4>
+      <div class="form-group">
+        <input
+          id="nickname"
+          type="text"
+          class="form-control text-center"
+          name="email"
+          placeholder="nickexample"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="save" onclick="saveNickname()">
+        Save
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row align-items-center justify-content-center h-75" id="welcome">
+  <div class="card bg-light">
+    <div class="card-body w-100">
+      <h3 class="card-title">Glad to see you <span id="nick"></span></h4>
+      <button type="submit" class="btn btn-primary btn-block" id="chat">
+        Chat now!
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock chat %}
+
+
+{% block js %}
+  <script src="{{ url_for('static', filename = 'js/welcome.js') }}">
+  </script>
+{% endblock js %}
