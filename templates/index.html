@@ -1,5 +1,35 @@
-{% extends "layout.html" %}
-
-{% block menu %}
-    Soy parte del menu
+{% extends "layout.html" %} {% block menu %}
+<div class="container mt-2">
+    <div class="row align-items-center justify-content-center">
+        <div class="flex-column align-items-center">
+            <div class="btn btn-block btn-primary">elemento uno</div>
+            <div>elemento dos</div>
+            <div>elemento tres</div>
+        </div>
+    </div>
+</div>
 {% endblock menu %}
+{% block chat %}
+<!-- <div class="container">
+    <div class="fixed-bottom align-items-center py-2">
+        <form class="rounded bg-danger form-inline" style="width: 50%; height: 35px; margin: auto;">
+            <div>
+                <input type="text" placeholder="Your message"> <button class="btn btn-success btn-sm">Send</button>
+            </div>
+        </form>
+    </div>
+</div>  -->
+
+<!-- Send Message -->
+<div class="fixed-bottom">
+    <div class="align-items-center">
+        <form class="form-inline">
+            <div class="form-group mx-sm-auto mb-2">
+                <input type="text" class="form-control" placeholder="Your message here" style="width: 700px;">
+                <button class="btn btn-primary" style="margin-left: 5px;" onclick="alert('Hola mundo')">Send</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+{% endblock chat %}

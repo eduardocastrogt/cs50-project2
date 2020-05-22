@@ -2,9 +2,13 @@
 
 {% block load %}
 <script>
+
   var miname = localStorage.getItem('nickname')
+
   document.addEventListener('DOMContentLoaded', function() {
+
     const nicknameuser = localStorage.getItem('nickname');
+
     if(nicknameuser){
       document.querySelector('#nick').innerHTML = nicknameuser;
       $("#setNickname").hide();
@@ -14,6 +18,7 @@
       $("#setNickname").show();
     }
   });
+  
 </script>
 {% endblock load %}
 
@@ -42,7 +47,7 @@
           required
         />
       </div>
-      <button type="submit" class="btn btn-primary btn-block" id="save" onclick="saveNickname()">
+      <button type="submit" class="btn btn-primary btn-block" id="save" onclick="saveNickname(); window.location.href='chat'">
         Save
       </button>
     </div>
@@ -53,7 +58,8 @@
   <div class="card bg-light">
     <div class="card-body w-100">
       <h3 class="card-title">Glad to see you <span id="nick"></span></h4>
-      <button type="submit" class="btn btn-primary btn-block" id="chat">
+      <button type="submit" class="btn btn-primary btn-block" id="chat" 
+          onclick="window.location.href='chat'">
         Chat now!
       </button>
     </div>

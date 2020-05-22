@@ -14,7 +14,6 @@
     {% block load %}
     {% endblock load %}
   </head>
-
   <body style="width: 100%;">
     <header>
       <div class="navbar navbar-dark bg-dark shadow-sm">
@@ -28,6 +27,8 @@
             />
             <strong>PySky</strong>
           </a>
+          <span class="navbar-text" id="username">
+          </span>
         </div>
       </div>
     </header>
@@ -45,6 +46,13 @@
       </div>
     </main>
   </body>
+  <script>
+    //If localstorege is true, set the user name in the navbar
+    const name = localStorage.getItem('nickname');
+    if(name){
+      document.querySelector('#username').innerHTML = name;
+    }
+  </script>
   <!-- Bootstrap js -->
   <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
